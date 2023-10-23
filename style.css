@@ -1,0 +1,231 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #0d0d0d;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #1f1f1f;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  z-index: 1000;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 50px;
+  margin-right: 10px;
+}
+
+.logo span {
+  font-size: 30px;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  color: #757575;
+}
+
+.nav-links {
+  display: flex;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: all 0.3s ease;
+}
+
+.btn.twitter {
+  background-color: #1da1f2;
+  color: #fff;
+}
+
+.btn.discord {
+  background-color: #7289da;
+  color: #fff;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 80px); /* Adjusted margin-top */
+  overflow: auto;
+  margin-top: 10px; /* Added margin-top */
+}
+
+.slideshow-container {
+  position: relative;
+  max-width: 800px;
+  margin-top: 20px;
+}
+
+.slide {
+  display: none;
+  text-align: center;
+  animation: fade 1s; /* Added fade animation */
+}
+
+@keyframes fade {
+  from {
+      opacity: .4;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+.slide img {
+  width: 450px;
+  height: 450px; /* Set the desired height for the images */
+  object-fit: cover; /* Maintain aspect ratio and cover the entire container */
+  border-radius: 15px;
+}
+
+.slide-text {
+  margin-top: 20px;
+}
+
+.slide-text h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.slide-text p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.btn.pre-order,
+.btn-buy {
+  display: inline-block;
+  padding: 15px 30px;
+  border-radius: 25px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+}
+
+.btn.pre-order {
+  background-color: #27ae60;
+  color: #fff;
+}
+
+.btn-buy {
+  background-color: #FF2449;
+  color: #fff;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  text-align: center;
+}
+
+.prev,
+.next {
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.prev:focus,
+.next:focus {
+    outline: none;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .logo img {
+      height: 30px; /* Decrease logo size for smaller screens */
+      margin-right: 5px; /* Adjust logo margin */
+  }
+
+  .logo span {
+      font-size: 24px; /* Decrease font size for logo text */
+  }
+
+  .nav-links {
+      display: none; /* Hide navigation links */
+  }
+
+  .content {
+      height: calc(100vh - 180px); /* Adjust content height */
+  }
+
+  .slide img {
+      width: 100%; /* Make images fill the container */
+      height: auto; /* Maintain aspect ratio */
+  }
+
+  .slide-text h1 {
+      font-size: 24px; /* Decrease heading font size */
+  }
+
+  .slide-text p {
+      font-size: 16px; /* Decrease paragraph font size */
+  }
+
+  .btn.pre-order,
+  .btn-buy {
+      padding: 10px 20px; /* Adjust button padding */
+      font-size: 16px; /* Decrease button font size */
+  }
+
+  .prev,
+  .next {
+      font-size: 16px; /* Decrease button font size */
+  }
+}
